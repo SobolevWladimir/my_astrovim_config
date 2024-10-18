@@ -22,35 +22,6 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "php" })
-      opts.handlers = require("astrocore").list_insert_unique(opts.handlers, {
-        function(config)
-          -- all sources with no handler get passed here
-
-          -- Keep original functionality
-          require("mason-nvim-dap").default_setup(config)
-        end,
-        php = function(config)
-          -- config.adapters = {
-          --  type = "executable",
-          --  command = "/usr/bin/python3",
-          --  args = {
-          --   "-m",
-          --   "debugpy.adapter",
-          --  },
-          -- }
-          config.configurations = {
-            type = "php",
-            request = "launch",
-            name = "Listen for Xdebug",
-            port = 9003,
-            pathMappings = {
-              ["/var/www/html/www/php"] = "/home/wladimir/Documents/projects/iiko/iikoWeb/server",
-              -- ["/app"] = "/home/wladimir/Documents/project/my/photoreport/server_symfony",
-            },
-          }
-          require("mason-nvim-dap").default_setup(config) -- don't forget this!
-        end,
-      })
     end,
   },
   {

@@ -17,3 +17,23 @@ vim.opt.clipboard = ""
 -- vim.keymap.set('n','Y','"+Y')
 -- vim.keymap.set('x','y','"+y')
 -- vim.keymap.set('x','Y','"+Y')
+--
+local dap = require "dap"
+local path = require("mason-registry").get_package("php-debug-adapter"):get_install_path()
+dap.adapters.php = {
+  type = "executable",
+  command = "node",
+  args = { path .. "/extension/out/phpDebug.js" },
+}
+dap.configurations.php = {
+  {
+    type = "php",
+    request = "launch",
+    name = "Listen for Xdebug",
+    port = 9003,
+    pathMappings = {
+      ["/var/www/html/www/php"] = "/home/wladimir/Documents/projects/iiko/iikoWeb/server",
+      -- ["/app"] = "/home/wladimir/Documents/project/my/photoreport/server_symfony",
+    },
+  },
+}
