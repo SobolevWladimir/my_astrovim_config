@@ -30,6 +30,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        clipboard = "",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -57,26 +58,7 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
-
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        -- ["<Leader>b"] = { desc = "Buffers" },
-
-        -- setting a mapping to false will disable it
-        -- ["<C-S>"] = false,
       },
-      -- rooter = {
-      --   detector = {
-      --     "lsp", -- highest priority is getting workspace from running language servers
-      --     { ".git", "_darcs", ".hg", ".bzr", ".svn" }, -- next check for a version controlled parent directory
-      --     { "lua", "MakeFile", "package.json", ".composer.json" }, -- lastly check for known project root files
-      --   },
-      --   -- ignore things from root detection
-      --   ignore = {
-      --     servers = {}, -- list of language server names to ignore (Ex. { "efm" })
-      --     dirs = { "var/*", "cache/*" }, -- list of directory patterns (Ex. { "~/.cargo/*" })
-      --   },
-      -- },
     },
   },
 }

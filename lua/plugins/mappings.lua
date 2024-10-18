@@ -25,7 +25,7 @@ return {
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         },
         v = {
-          ["Y"] = { "<cmd><cr>", desc = "New tab" },
+          ["Y"] = { '"+y' },
         },
 
         t = {
