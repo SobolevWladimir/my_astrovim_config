@@ -37,3 +37,37 @@ dap.configurations.php = {
     },
   },
 }
+
+-- require("conform").setup {
+--   log_level = vim.log.levels.DEBUG,
+-- }
+--
+-- function dump(o)
+--   if type(o) == "table" then
+--     local s = "{ "
+--     for k, v in pairs(o) do
+--       if type(k) ~= "number" then k = '"' .. k .. '"' end
+--       s = s .. "[" .. k .. "] = " .. dump(v) .. ","
+--     end
+--     return s .. "} "
+--   else
+--     return tostring(o)
+--   end
+-- end
+--
+-- local null_ls = require "null-ls"
+-- local phpcsfixerpath = "--config=/home/wladimir/.config/nvim/.php-cs-fixer.dist.php"
+-- --
+-- local sources = {
+--   null_ls.builtins.formatting.phpcsfixer.with {
+--     args = { "--no-interaction", "--quiet", phpcsfixerpath, "fix", "$FILENAME" },
+--     extra_args = function(params)
+--       dump(params)
+--       return params.options
+--     end,
+--   },
+-- }
+-- --
+-- null_ls.setup { sources = sources }
+-- -- print(dump(b.formatting.phpcsfixer))
+-- print(dump(sources))

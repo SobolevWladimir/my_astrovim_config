@@ -14,5 +14,7 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.git" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  -- { import = "astrocommunity.fuzzy-finder.fzf-lua" },
   -- import/override with your plugins folder
 }

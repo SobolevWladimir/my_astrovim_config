@@ -27,6 +27,12 @@ return {
             "<cmd>lua require('telescope').extensions.recent_files.pick()<CR>",
             desc = "Открыть последние используемые",
           },
+
+          ["<Leader>lf"] = { function() require("conform").format {} end, desc = "format comfort" },
+          ["<Leader>lw"] = {
+            function() require("telescope.builtin").diagnostics { bufnr = 0 } end,
+            desc = "diagnostic file",
+          },
           -- quick save
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         },

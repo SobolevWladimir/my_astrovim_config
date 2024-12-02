@@ -1,5 +1,5 @@
 -- return {}
-local phpcsfixerpath = "--config=~/.config/nvim/.php-cs-fixer.dist.php"
+local phpcsfixerpath = "--config=/home/wladimir/.config/nvim/.php-cs-fixer.dist.php"
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -24,26 +24,27 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "php" })
     end,
   },
-  {
-    "jay-babu/mason-null-ls.nvim",
-    optional = true,
-    opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "php-cs-fixer" })
-    end,
-  },
+  -- {
+  --   "jay-babu/mason-null-ls.nvim",
+  --   optional = true,
+  --   opts = function(_, opts)
+  --     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "php-cs-fixer" })
+  --   end,
+  -- },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     optional = true,
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(
-        opts.ensure_installed,
-        { "phpactor", "php-debug-adapter", "php-cs-fixer" }
-      )
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+        "phpactor",
+        "php-debug-adapter",
+        -- "php-cs-fixer"
+      })
     end,
   },
   {
     "stevearc/conform.nvim",
-    optional = true,
+    -- optional = true,
     opts = {
       formatters_by_ft = {
         php = { "iiko_php_cs_fixer" },
