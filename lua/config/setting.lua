@@ -32,7 +32,7 @@ dap.configurations.php = {
     name = "Listen for Xdebug",
     port = 9003,
     pathMappings = {
-      ["/var/www/html/www/php"] = "/home/wladimir/Documents/projects/iiko/iikoWeb/server",
+      ["/var/www/html/www/php"] = "/home/wladimir/Documents/project/iiko/iikoWeb/server",
       -- ["/app"] = "/home/wladimir/Documents/project/my/photoreport/server_symfony",
     },
   },
