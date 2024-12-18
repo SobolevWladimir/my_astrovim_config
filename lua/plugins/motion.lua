@@ -8,7 +8,8 @@ return {
       mappings = {
         n = {
           ["s"] = { function() require("hop").hint_char1() end, desc = "Hop hint words" },
-          ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop hint lines" },
+          -- ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop hint lines" },
+          ["<S-s>"] = { function() require("hop").hint_char1{multi_windows=true} end, desc = "Hop hint lines" },
         },
         v = {
           ["s"] = { function() require("hop").hint_words { extend_visual = true } end, desc = "Hop hint words" },

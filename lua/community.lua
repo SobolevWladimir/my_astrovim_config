@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.git" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" },
   -- { import = "astrocommunity.fuzzy-finder.fzf-lua" },
   -- import/override with your plugins folder
 }
