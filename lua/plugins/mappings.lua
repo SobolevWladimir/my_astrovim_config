@@ -18,9 +18,27 @@ return {
             end,
             desc = "Найти файл в проводнике",
           },
+
+          ["<Leader>w"] = { desc = "Окно" },
+          ["<Leader>wv"] = { 
+            "<cmd>vsplit<CR>",
+            desc = "Разделить окно по вертикали"
+          },
+          ["<Leader>wh"] = { 
+            "<cmd>split<CR>",
+            desc = "Разделить окно по горизонтале"
+          },
           -- tables with just a `desc` key will be registered with which-key if it's installed
           -- this is useful for naming menus
           ["<Leader>b"] = { desc = "Буфер" },
+          ["<Leader>bh"] = {
+            function() require("bufferline.commands").close_in_direction "left" end,
+            desc = "Закрыть вкладки с права",
+          },
+          ["<Leader>bl"] = {
+            function() require("bufferline.commands").close_in_direction "right" end,
+            desc = "Закрыть вкладки с лева",
+          },
           ["<Leader>s"] = { desc = "Поиск и замена" },
           ["<Leader>st"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" },
           ["<Leader>sr"] = {
