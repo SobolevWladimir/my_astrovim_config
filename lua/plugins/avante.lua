@@ -7,12 +7,19 @@ return {
     -- for example
     provider = "openai",
     openai = {
-      api_key = "sk-or-vv-6ee1c42641f83a84d34bf72b56926bbf82d105aa3ea996ac6a4fb40ea670f4a1",
-      model = "deepseek/deepseek-chat-0324-alt-fast", -- или другой совместимый вариант
-      api_base = "https://api.vsegpt.ru/v1/",
-      timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+      -- model = "deepseek/deepseek-coder", -- или другой совместимый вариант
+      -- model = "openai/gpt-3.5-turbo", -- или другой совместимый вариант
+      -- model = "deepseek/deepseek-r1-distill-llama-70b", -- или другой совместимый вариант
+      -- model = "deepseek/deepseek-chat-0324-alt-fast", -- или другой совместимый вариант
+      -- model = "deepseek/deepseek-r1-alt", -- или другой совместимый вариант
+      -- model = "deepseek/deepseek-chat", -- или другой совместимый вариант
+      model = "openai/o3-mini", -- или другой совместимый вариант
+      -- endpoint = "http://gpt.rms_proxy.localhost:9091/v1/",
+      endpoint = "https://api.vsegpt.ru/v1/",
+
+      -- timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
       temperature = 0,
-      max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+      max_tokens = 1500, -- Increase this to include reasoning tokens (for reasoning models)
       --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
     },
   },
@@ -50,7 +57,7 @@ return {
     },
     {
       -- Make sure to set this up properly if you have lazy=true
-      'MeanderingProgrammer/render-markdown.nvim',
+      "MeanderingProgrammer/render-markdown.nvim",
       opts = {
         file_types = { "markdown", "Avante" },
       },

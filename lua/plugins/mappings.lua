@@ -19,6 +19,7 @@ return {
             desc = "Найти файл в проводнике",
           },
 
+          ["<Leader>a"] = { desc = "AI  инструменты" },
           ["<Leader>w"] = { desc = "Окно" },
           ["<Leader>wv"] = { 
             "<cmd>vsplit<CR>",
